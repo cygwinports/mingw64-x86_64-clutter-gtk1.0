@@ -1,0 +1,33 @@
+--- origsrc/clutter-gtk-1.4.4/clutter-gtk/Makefile.am	2012-09-09 12:51:50.000000000 -0500
++++ src/clutter-gtk-1.4.4/clutter-gtk/Makefile.am	2014-01-28 23:05:24.792237800 -0600
+@@ -47,7 +47,7 @@ source_h_private = \
+ libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_SOURCES = $(source_c) $(source_h) $(source_h_private)
+ libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LIBADD  = $(CLUTTER_GTK_DEPS_LIBS) $(LIBM)
+ libclutter_gtk_@CLUTTER_GTK_API_VERSION@_la_LDFLAGS = \
+-	$(CLUTTER_LT_LDFLAGS) \
++	$(CLUTTER_GTK_LT_LDFLAGS) \
+ 	-export-symbols-regex "^gtk_clutter.*"
+ 
+ cluttergtkheadersdir = $(includedir)/clutter-gtk-@CLUTTER_GTK_API_VERSION@/clutter-gtk
+--- origsrc/clutter-gtk-1.4.4/clutter-gtk/gtk-clutter-actor.c	2012-09-09 12:51:50.000000000 -0500
++++ src/clutter-gtk-1.4.4/clutter-gtk/gtk-clutter-actor.c	2014-01-28 23:01:07.393515400 -0600
+@@ -59,7 +59,7 @@
+ #endif
+ 
+ #ifdef CLUTTER_WINDOWING_WIN32
+-#include <clutter/clutter-win32.h>
++#include <clutter/win32/clutter-win32.h>
+ #endif
+ #ifdef GDK_WINDOWING_WIN32
+ #include <gdk/gdkwin32.h>
+--- origsrc/clutter-gtk-1.4.4/configure.ac	2013-03-19 08:03:56.000000000 -0500
++++ src/clutter-gtk-1.4.4/configure.ac	2014-01-28 23:01:59.045469700 -0600
+@@ -56,7 +56,7 @@ AC_MSG_CHECKING([if building for some Wi
+ AS_CASE([$host],
+         [*-*-mingw*|*-*-cygwin*],
+         [
+-          CLUTTER_LT_LDFLAGS="$CLUTTER_GTK_LT_LDFLAGS -no-undefined"
++          CLUTTER_GTK_LT_LDFLAGS="$CLUTTER_GTK_LT_LDFLAGS -no-undefined"
+           platform_win32=yes
+         ],
+ 
