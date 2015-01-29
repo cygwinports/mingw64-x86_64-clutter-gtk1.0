@@ -3,8 +3,8 @@ ORIG_PN="clutter-gtk"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-clutter-gtk1.0"
-VERSION=1.4.4
-RELEASE=2
+VERSION=1.6.0
+RELEASE=1
 CATEGORY="Devel"
 SUMMARY="OpenGL-based animated GTK+ GUI library for Win64 toolchain"
 DESCRIPTION="Clutter is an open source software library for creating fast,
