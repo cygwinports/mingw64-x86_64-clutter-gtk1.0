@@ -3,7 +3,7 @@ ORIG_PN="clutter-gtk"
 inherit cross gnome2
 
 NAME="mingw64-x86_64-clutter-gtk1.0"
-VERSION=1.6.0
+VERSION=1.6.6
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="OpenGL-based animated GTK+ GUI library for Win64 toolchain"
@@ -13,7 +13,5 @@ rendering but with an API which hides the underlying GL complexity from the
 developer. The Clutter API is intended to be easy to use, efficient and
 flexible."
 HOMEPAGE="http://clutter-project.org/"
-
-PATCH_URI="1.4.4-clutter-win32.patch"
 
 CYGCONF_ARGS="--disable-static lt_cv_deplibs_check_method=pass_all"
